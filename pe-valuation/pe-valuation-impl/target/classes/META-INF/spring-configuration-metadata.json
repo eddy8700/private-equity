@@ -1,0 +1,13 @@
+{
+  "groups": [{
+    "name": "",
+    "type": "com.markit.pe.valuationengine.impl.CurrencyHolidayCodeQAGMap",
+    "sourceType": "com.markit.pe.valuationengine.impl.CurrencyHolidayCodeQAGMap"
+  }],
+  "properties": [{
+    "name": "namespace",
+    "type": "java.util.Map<java.lang.String,java.lang.String>",
+    "sourceType": "com.markit.pe.valuationengine.impl.CurrencyHolidayCodeQAGMap"
+  }],
+  "hints": []
+}

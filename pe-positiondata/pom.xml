@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.markit.pe</groupId>
+    <artifactId>private-equity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.markit.pe.positiondata</groupId>
+  <artifactId>pe-positiondata</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>pe-positiondata-api</module>
+  	<module>pe-positiondata-impl</module>
+  	<module>pe-positiondata-rest</module>
+  	<module>pe-positiondata-repo</module>
+  	<module>pe-positiondata-domain</module>
+  	<module>pe-positiondata-util</module>
+  </modules>
+</project>

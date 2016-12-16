@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.markit.pe</groupId>
+    <artifactId>private-equity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.markit.pe.valuation</groupId>
+  <artifactId>pe-valuation</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>pe-valuation-api</module>
+  	<module>pe-valuation-domain</module>
+  	<module>pe-valuation-impl</module>
+  	<module>pe-valuation-rest</module>
+  	<module>pe-valuation-repo</module>
+  	<module>pe-valuation-util</module>
+  	<module>pe-valuation-mongo-repo</module>
+  </modules>
+</project>

@@ -1,0 +1,25 @@
+
+server:
+  port: 8080
+  context-path: /security-service
+
+message: "HELLO This is pe-ui-Service DEV"
+
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://lon6dvedmsql01:1433;databaseName=PE_INT;integratedSecurity=true;
+    username: 
+    password: 
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dbcp:
+      test-while-idle: true
+      validation-query: Select 1  
+    
+    
+    jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none      
+    show-sql: true
+    

@@ -1,0 +1,5 @@
+
+message: "HELLO This is ComparableData-Service"
+
+logging.file: D:/logs/peCompDataService.log
+

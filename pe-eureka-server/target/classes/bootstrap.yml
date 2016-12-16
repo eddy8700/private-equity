@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: pe-eureka-server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      
+      
+
+   
+
+      

@@ -1,0 +1,57 @@
+server:
+  port: 8083
+  context-path: /valuation-engine
+
+message: "HELLO This is Valuation-Engine....DEV"
+
+logging.file: D:/logs/peValuationEngine.log
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://lon6dvedmsql01:1433;databaseName=PE_INT;integratedSecurity=true;
+    username: 
+    password: 
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dbcp:
+      test-while-idle: true
+      validation-query: Select 1
+    
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none      
+    show-sql: true
+  cloud:
+    config:
+      uri: http://localhost:8888
+    stream:                        
+     kafka:
+        binder:
+          brokers:
+            - NDADEVPC328.markit.partners
+          zk-nodes:
+            - NDADEVPC328.markit.partners  
+          default-zk-port: 2181
+          default-broker-port: 9092
+          auto-create-topics: true  
+          
+          
+portfolio:
+ valuation:
+  thread:
+   pool:
+    size: 20
+system:
+ generated:
+  url: http://compdata-service/compdata-service/getSystemGenerated
+  
+position:
+ url: http://positiondata-service/positiondata-service/portfolioPositions
+ 
+latest:
+ comparabledetails:
+  url: http://compdata-service/compdata-service/getLatestCompsDetails
+  
+exception:
+ status:
+  url: http://exception-management-service/exception-management-service/fetchPEExceptionStatus/{portfolioId}/{portfolioValuationId}             

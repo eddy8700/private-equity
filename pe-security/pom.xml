@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.markit.pe</groupId>
+    <artifactId>private-equity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.markit.pe.security</groupId>
+  <artifactId>pe-security</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>pe-security-domain</module>
+  	<module>pe-security-api</module>
+  	<module>pe-security-rest</module>
+  	<module>pe-security-impl</module>
+  	<module>pe-security-repo</module>
+  </modules>
+</project>

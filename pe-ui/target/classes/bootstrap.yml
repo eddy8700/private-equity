@@ -1,0 +1,39 @@
+
+server:
+  port: 8080
+
+
+
+
+message: "HELLO This is pe-ui-Service DEV"
+
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://lon6dvedmsql01:1433;databaseName=PE_INT;integratedSecurity=true;
+    username: 
+    password: 
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dbcp:
+      test-while-idle: true
+      validation-query: Select 1  
+  application:
+    name: pe-ui
+    
+    jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none      
+    show-sql: true
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
+feign:
+ hystrix:
+  enabled: false 
+      

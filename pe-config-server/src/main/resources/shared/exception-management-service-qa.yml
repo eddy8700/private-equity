@@ -1,0 +1,53 @@
+server:
+  port: 8550
+  context-path: /exception-management-service
+
+message: "HELLO This is exception-Service QA"
+
+
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+    stream:
+      bindings:
+              peExceptionTopic:
+                              group: exceptionWrite
+                              consumer:
+                               auto-commit-offset : true 
+                              
+      kafka:
+        binder:
+          brokers:
+            - NDADEVPC108.markit.partners
+          zk-nodes:
+            - NDADEVPC108.markit.partners  
+          default-zk-port: 2181
+          default-broker-port: 9092  
+
+
+  datasource:
+    url: jdbc:sqlserver://lon6dvedmsql01:1433;databaseName=PE_DEV;integratedSecurity=true;
+    username: 
+    password: 
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dbcp:
+      test-while-idle: true
+      validation-query: Select 1  
+    
+    
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none      
+    show-sql: true
+    
+    
+             
+  
+  
+       
+    
+    
+

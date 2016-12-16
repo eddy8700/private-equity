@@ -1,0 +1,53 @@
+server:
+  port: 8081
+  context-path: /positiondata-service
+
+message: "HELLO This is PositionData-Service QA345"
+
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://lon6dvedmsql01:1433;databaseName=PE_DEV;integratedSecurity=true;
+    username: 
+    password: 
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    dbcp:
+      test-while-idle: true
+      validation-query: Select 1  
+    
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: none      
+    show-sql: true
+    
+    
+security:
+ bulk:
+  upload:
+   request:
+    multipart:
+     maxFileSize: 1MB   
+     maxRequestSize: 1MB
+   healthcheck:
+    retry:
+     count: 3
+     interval: 3000 
+ 
+edm:
+ security:
+  bulk:
+   upload:
+    temp:
+     file:
+      location: //markit.partners/dfs/UK/Shared/Products/Enterprise Data Management/EDM Noida/PE/ExcelUploadTemplate
+    process:
+     name: 8000 PE FI Load TEST
+    queue:
+     parameter:
+      name: EDM_PE      
+  
+ domain:
+  username: markit\\aditya.gupta2
+ url: http://edm-webui-flm.markit.partners/ProcessLauncher.svc?singleWsdl 
+       

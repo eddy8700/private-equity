@@ -1,0 +1,6 @@
+
+message: "HELLO This is exception-Service DEFAULT"
+
+logging.file: D:/logs/exceptionManagementService.log
+
+

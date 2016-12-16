@@ -1,0 +1,5 @@
+
+message: "HELLO This is Valuation-Engine....DEFAULT"
+
+logging.file: D:/logs/peValuationEngine.log
+

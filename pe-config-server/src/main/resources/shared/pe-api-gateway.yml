@@ -1,0 +1,52 @@
+server:
+  port: 8050
+  
+logging.file: D:/logs/peApiGateway.log
+
+zuul:
+  ignoredServices: '*'
+#  host:
+#    connect-timeout-millis: 3000
+#    socket-timeout-millis: 60000
+  routes:
+    valuation-engine:
+        path: /valuation-engine/**
+        serviceId: valuation-engine
+        stripPrefix: false
+#        ribbon:
+#          ReadTimeout: 30000
+    positiondata-service:
+        path: /positiondata-service/**
+        serviceId: positiondata-service
+        stripPrefix: false
+#        ribbon:
+#          ReadTimeout: 30000
+    compdata-service:
+        path: /compdata-service/**
+        serviceId: compdata-service
+        stripPrefix: false
+#        ribbon:
+#          ReadTimeout: 30000
+    exception-management-service:
+        path: /exception-management-service/**
+        serviceId: exception-management-service
+        stripPrefix: false
+
+ribbon:
+  ReadTimeout: 100000
+  
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+          
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 60000
+   
+#ribbon:
+#  eureka:
+#    enabled: false
+  
